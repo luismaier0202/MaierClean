@@ -1,0 +1,240 @@
+/* ========= MaierClean – Stylesheet ========= */
+
+/* --- Farbpalette (Hauptfarbe: Blau) --- */
+:root {
+  --blue-1: #d8ecff;
+  --blue-2: #aedaff;
+  --blue-3: #5bb7ff;
+  --blue-4: #1e90ff;
+  --blue-5: #005bbb;
+  --bg: #f8fbff;
+  --text: #0c1a2b;
+  --muted: #53657a;
+  --white: #ffffff;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+}
+.container {
+  width: min(1200px, 90%);
+  margin: auto;
+}
+
+/* --- Header --- */
+.header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  padding: 1rem 0;
+  z-index: 50;
+}
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--blue-5);
+}
+.logo span {
+  color: var(--blue-3);
+}
+.nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* --- Hero Section --- */
+.hero {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--blue-5);
+}
+.hero-text p {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Deko-Bubbles */
+.hero-art {
+  position: relative;
+  width: 100%;
+  height: 340px;
+}
+.bubbles {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, var(--blue-3), transparent),
+              radial-gradient(circle at 70% 60%, var(--blue-2), transparent),
+              radial-gradient(circle at 50% 80%, var(--blue-4), transparent);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  animation: float 9s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* --- Cards / Services --- */
+.services {
+  padding: 4rem 0;
+}
+h2 {
+  font-size: 2.2rem;
+  color: var(--blue-5);
+  margin-bottom: 0.5rem;
+}
+.lead {
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-left: 6px solid var(--blue-3);
+}
+.card h3 {
+  margin-top: 0;
+  color: var(--blue-4);
+}
+
+/* --- About Section --- */
+.about {
+  padding: 4rem 0;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+}
+.about-side .small {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.about-side h4 {
+  margin-top: 0;
+}
+
+/* --- Values --- */
+.values {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, var(--blue-1), var(--bg));
+}
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.value {
+  background: var(--white);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-left: 6px solid var(--blue-4);
+}
+
+/* --- Contact Section --- */
+.contact {
+  padding: 4rem 0;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+}
+.contact-box {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid #c9d9ea;
+  font-size: 1rem;
+}
+.contact-form textarea {
+  resize: vertical;
+  height: 140px;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.3rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+.primary {
+  background: linear-gradient(90deg, var(--blue-4), var(--blue-5));
+  color: white;
+}
+.primary:hover {
+  filter: brightness(1.1);
+}
+.outline {
+  border: 2px solid var(--blue-3);
+  color: var(--blue-5);
+}
+.outline:hover {
+  background: var(--blue-1);
+}
+.ghost {
+  color: var(--blue-4);
+}
+.full {
+  width: 100%;
+  text-align: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .hero-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav { display: none; }
+}
